@@ -24,7 +24,7 @@ export default function RootLayout({
         <nav className="flex justify-between items-center p-4 bg-secondary">
         <h1 className="text-2xl font-bold">Todo List</h1>
         <span className='space-x-2 my-1 mx-3'>
-        <Link href='/dashboard'>
+        <Link href='/Dashboard'>
         Dashboard
         </Link>
         <ModeToggle />

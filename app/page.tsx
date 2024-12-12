@@ -2,9 +2,12 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      Alphazero
-    </div>
+    <div className="grid my-9 place-items-center bg-background text-foreground">
+    <h1 className='text-5xl'>
+      Alphazero SM0
+      </h1>
+  </div>
+  
   )
 }
 
