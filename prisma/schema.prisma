@@ -15,4 +15,6 @@ model Todo {
   title     String
   completed Boolean  @default(false)
   createdAt DateTime @default(now())
+  userId    String
+  @@unique([id, userId])
 }

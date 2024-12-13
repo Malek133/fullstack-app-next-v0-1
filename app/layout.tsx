@@ -2,8 +2,10 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
-import { ModeToggle } from '@/components/mode-toggle'
-import Link from 'next/link'
+import NavBar from '@/components/NavBar'
+import {
+  ClerkProvider,
+} from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,22 +20,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <nav className="flex justify-between items-center p-4 bg-secondary">
-        <h1 className="text-2xl font-bold">Todo List</h1>
-        <span className='space-x-2 my-1 mx-3'>
-        <Link href='/Dashboard'>
-        Dashboard
-        </Link>
-        <ModeToggle />
-          </span>
-      </nav>
+       <NavBar />
           {children}
         </ThemeProvider>
       </body>
-    </html>
+    </html></ClerkProvider>
   )
 }
 
